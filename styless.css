@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at center, #0f2027, #000c12);
+  color: #d9fdf8;
+  overflow-x: hidden;
+  transition: background 8s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro h1 {
+  font-weight: 300;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.intro button {
+  margin-top: 20px;
+  padding: 10px 30px;
+  border-radius: 30px;
+  border: 1px solid #6ef5d2;
+  background: transparent;
+  color: #6ef5d2;
+  cursor: pointer;
+}
+
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer {
+  position: absolute;
+  top: 20px;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.instruction {
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.orb {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #6ef5d2, #1b3a3f);
+  box-shadow: 0 0 60px rgba(110,245,210,0.4);
+  transition: transform 4s ease-in-out;
+}
+
+.sound-toggle {
+  margin-top: 40px;
+  background: transparent;
+  border: 1px solid #6ef5d2;
+  color: #6ef5d2;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+.journal {
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #000c12;
+}
+
+textarea {
+  width: 80%;
+  max-width: 600px;
+  height: 150px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(110,245,210,0.2);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  resize: none;
+}
+
+#saveBtn {
+  margin-top: 20px;
+  padding: 8px 20px;
+  border: none;
+  background: #6ef5d2;
+  color: black;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#pausetimer {
+  margin-top: 20px;
+  padding: 8px 20px;
+  border: none;
+  background: #6ef5d2;
+  color: black;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.saved {
+  margin-top: 15px;
+  opacity: 0;
+  transition: opacity 1s ease;
+  font-size: 0.9rem;
+}
+

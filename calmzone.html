@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drift with me</title>
+<link rel="stylesheet" href="styless.css">
+</head>
+<body>
+
+<div class="intro" id="intro">
+  <h1>Drift.</h1>
+  <p>A quiet space to breathe.</p>
+  <button id="startBtn">Begin</button>
+</div>
+
+<section class="hero hidden" id="hero">
+  <div class="timer" id="timer">00:00</div>
+  <div class="instruction" id="instruction">Inhale</div>
+  <div class="orb" id="orb"></div>
+</section>
+
+<section class="journal hidden" id="journal">
+  <h2>Reflect</h2>
+  <textarea id="journalInput" placeholder="Write what you're feeling..."></textarea>
+  <button id="saveBtn">Save</button>
+  <button id="pausetimer">Pause Timer</button>
+  <div class="saved" id="savedMsg">Saved quietly.</div>
+</section>
+
+<audio id="ambient" loop>
+  <source src="ambient/valentinalopezz-calm-atmosphere-294371.mp3" type="audio/mp3">
+</audio>
+
+<script src="scriptss.js"></script>
+</body>
+</html>
+
