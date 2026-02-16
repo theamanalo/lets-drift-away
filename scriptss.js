@@ -78,8 +78,3 @@ window.onload = () => {
   const saved = localStorage.getItem("driftJournal");
   if (saved) journalInput.value = saved;
 };
-
-saveBtn.addEventListener("click", saveSessionEntry);
-
-renderHistory();
-
