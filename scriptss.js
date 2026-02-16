@@ -2,13 +2,14 @@ const intro = document.getElementById("intro");
 const hero = document.getElementById("hero");
 const journal = document.getElementById("journal");
 const startBtn = document.getElementById("startBtn");
+const historyList = document.getElementById("historyList");
 
 const orb = document.getElementById("orb");
 const instruction = document.getElementById("instruction");
 const timer = document.getElementById("timer");
 
 const ambient = document.getElementById("ambient");
-ambient.loop = true; // <-- makes the sound loop continuously
+ambient.loop = true; 
 
 const journalInput = document.getElementById("journalInput");
 const saveBtn = document.getElementById("saveBtn");
@@ -79,3 +80,46 @@ window.onload = () => {
   if (saved) journalInput.value = saved;
 };
 
+function saveSessionEntry() {
+  const text = journalInput.value.trim();
+  if (!text) return;
+
+  const now = new Date();
+
+  const entry = {
+    date: now.toLocaleDateString(),
+    time: now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+    duration: timer.textContent,
+    reflection: text
+  };
+
+  let history = JSON.parse(localStorage.getItem("driftHistory")) || [];
+  history.unshift(entry);
+  localStorage.setItem("driftHistory", JSON.stringify(history));
+
+  renderHistory();
+}
+
+function renderHistory() {
+  const history = JSON.parse(localStorage.getItem("driftHistory")) || [];
+  if (!historyList) return;
+
+  historyList.innerHTML = "";
+
+  history.forEach(entry => {
+    const div = document.createElement("div");
+    div.classList.add("entry");
+
+    div.innerHTML = `
+      <strong>${entry.date} • ${entry.time}</strong>
+      Duration: ${entry.duration}<br>
+      ${entry.reflection}
+    `;
+
+    historyList.appendChild(div);
+  });
+}
+
+saveBtn.addEventListener("click", saveSessionEntry);
+
+renderHistory();
