@@ -127,3 +127,38 @@ textarea {
   font-size: 0.9rem;
 }
 
+.history {
+  margin-top: 40px;
+  width: 80%;
+  max-width: 600px;
+}
+
+.history h3 {
+  font-weight: 300;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+.entry {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(110,245,210,0.15);
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.entry:hover {
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+.entry strong {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
